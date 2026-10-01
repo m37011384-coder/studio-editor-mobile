@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Studio Editor Mobile</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/examples/js/controls/OrbitControls.js"></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div class="left-tools">
+          <button class="icon-btn" aria-label="Menu">≡</button>
+          <div class="brand">
+            <span class="brand-dot"></span>
+            <span>Studio Editor</span>
+          </div>
+        </div>
+
+        <div class="toolbar center-tools" aria-label="Main tools">
+          <button class="tool active">Select</button>
+          <button class="tool">Move</button>
+          <button class="tool">Rotate</button>
+          <button class="tool">Scale</button>
+        </div>
+
+        <div class="toolbar right-tools">
+          <button class="pill success">Play</button>
+          <button class="pill">Publish</button>
+        </div>
+      </header>
+
+      <main class="workspace">
+        <aside class="panel left-panel">
+          <div class="panel-header">
+            <span>Explorer</span>
+            <button aria-label="Add object">+</button>
+          </div>
+          <ul id="explorerList" class="tree"></ul>
+        </aside>
+
+        <section class="viewport-wrap">
+          <div class="viewport-header">
+            <div class="chip-group">
+              <button class="chip active">Build</button>
+              <button class="chip">Model</button>
+              <button class="chip">Script</button>
+            </div>
+            <div class="status-group">
+              <span>Touch View</span>
+              <span class="dot green"></span>
+            </div>
+          </div>
+
+          <div id="viewport" class="viewport" aria-label="3D editor viewport"></div>
+
+          <div class="fab-row">
+            <button class="fab" data-add="box">Block</button>
+            <button class="fab" data-add="sphere">Sphere</button>
+            <button class="fab" data-add="light">Light</button>
+            <button class="fab" data-add="camera">Camera</button>
+          </div>
+        </section>
+
+        <aside class="panel right-panel">
+          <div class="panel-header">
+            <span>Properties</span>
+            <button aria-label="More options">⋯</button>
+          </div>
+          <div id="propertiesPanel" class="properties"></div>
+        </aside>
+      </main>
+
+      <footer class="bottom-bar">
+        <div class="log-window">
+          <span class="terminal-label">Output</span>
+          <div id="consoleLog">Ready — mobile Studio editor online</div>
+        </div>
+      </footer>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
